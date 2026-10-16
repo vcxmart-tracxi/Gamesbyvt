@@ -79,7 +79,7 @@ export const ScorecardModal: React.FC<ScorecardModalProps> = ({
 
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`w-full max-w-lg bg-white rounded-2xl border border-[#E7E7E3] shadow-xl p-6 sm:p-8 my-auto relative ${
+        className={`w-full max-w-lg bg-[#FAF7F0] rounded-2xl border border-[#E6DFD3] shadow-xl p-6 sm:p-8 my-auto relative ${
           isWinner ? 'animate-win-card' : isLoss ? 'animate-loss-card' : ''
         }`}
       >
@@ -87,34 +87,34 @@ export const ScorecardModal: React.FC<ScorecardModalProps> = ({
         <button
           onClick={onDismiss}
           aria-label="Dismiss scorecard"
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg text-[#737780] hover:text-[#202124] hover:bg-[#F5F5F1] transition-colors cursor-pointer"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg text-[#8C857B] hover:text-[#1C1917] hover:bg-[#F3EFE6] transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
 
         {/* Header */}
-        <div className="text-center pb-5 border-b border-[#E7E7E3]">
-          <span className="text-[11px] font-mono text-[#4169E1] uppercase tracking-wider block font-semibold mb-1">
+        <div className="text-center pb-5 border-b border-[#E6DFD3]">
+          <span className="text-[11px] font-mono text-[#3B62D6] uppercase tracking-wider block font-semibold mb-1">
             {scorecard.gameTitle} · Official Results
           </span>
-          <h2 id="scorecard-title" className="text-xl sm:text-2xl font-bold text-[#202124]">
+          <h2 id="scorecard-title" className="text-xl sm:text-2xl font-bold text-[#1C1917]">
             {scorecard.winningCondition}
           </h2>
 
           {/* Personal outcome banner */}
           <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold">
             {isWinner ? (
-              <span className="inline-flex items-center gap-1.5 text-[#238636] bg-[#EDF7EE] px-3 py-1 rounded-full animate-win-glow-green">
+              <span className="inline-flex items-center gap-1.5 text-[#15803D] bg-[#EBF7EE] border border-[#15803D]/20 px-3 py-1 rounded-full animate-win-glow-green">
                 <CheckCircle2 className="w-3.5 h-3.5 animate-checkmark" />
                 <span>You Won this Match!</span>
               </span>
             ) : isLoss ? (
-              <span className="inline-flex items-center gap-1.5 text-[#D93025] bg-[#FCE8E6] px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[#DC2626] bg-[#FEECEB] border border-[#DC2626]/20 px-3 py-1 rounded-full">
                 <XCircle className="w-3.5 h-3.5" />
                 <span>Match Completed · Runner-up</span>
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-[#737780] bg-[#F5F5F1] px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[#57534E] bg-[#F3EFE6] border border-[#E6DFD3] px-3 py-1 rounded-full">
                 <span>Completed</span>
               </span>
             )}
@@ -125,7 +125,7 @@ export const ScorecardModal: React.FC<ScorecardModalProps> = ({
         <div className="my-5 overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-[#E7E7E3] text-[#737780]">
+              <tr className="border-b border-[#E6DFD3] text-[#8C857B]">
                 <th className="py-2 px-2 font-medium">Player</th>
                 <th className="py-2 px-2 font-medium">UID</th>
                 <th className="py-2 px-2 font-medium">Role / Hand</th>

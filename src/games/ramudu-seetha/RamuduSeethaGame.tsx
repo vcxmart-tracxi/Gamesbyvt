@@ -89,16 +89,16 @@ export const RamuduSeethaGame: React.FC<RamuduSeethaGameProps> = ({
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
-            <h2 className="text-lg font-bold text-[#202124]">
+            <h2 className="text-lg font-bold text-[#1C1917]">
               Character Cards & Assigned Scores
             </h2>
-            <p className="text-xs text-[#777B83]">
+            <p className="text-xs text-[#57534E]">
               Confirmed standard scoring rules and configurable roster.
             </p>
           </div>
           <button
             onClick={() => onSendAction('returnToLobby')}
-            className="self-start sm:self-auto text-xs font-medium text-[#777B83] hover:text-[#202124] px-3 py-1.5 rounded-lg border border-[#E7E7E3] hover:bg-[#F5F5F1] transition-colors cursor-pointer"
+            className="self-start sm:self-auto text-xs font-medium text-[#57534E] hover:text-[#1C1917] px-3 py-1.5 rounded-lg border border-[#E6DFD3] hover:bg-[#F3EFE6] transition-colors cursor-pointer"
           >
             ← Return to Lobby
           </button>
@@ -110,25 +110,25 @@ export const RamuduSeethaGame: React.FC<RamuduSeethaGameProps> = ({
             return (
               <div
                 key={char.id}
-                className="bg-white rounded-2xl border border-[#E7E7E3] p-5 shadow-xs flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-[#E6DFD3] p-5 shadow-xs flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#777B83] mb-3">
+                  <div className="flex items-center justify-between text-xs text-[#8C857B] mb-3">
                     <span className="font-mono text-[11px]">
                       {char.roleType === 'custom' ? 'Custom' : 'Standard'}
                     </span>
                     {isConditional && (
-                      <span className="text-[10px] text-[#4169E1] font-semibold">
+                      <span className="text-[10px] text-[#3B62D6] font-semibold">
                         Conditional
                       </span>
                     )}
                   </div>
                   
-                  <h3 className="text-base font-bold text-[#202124]">
+                  <h3 className="text-base font-bold text-[#1C1917]">
                     {char.name}
                   </h3>
                   
-                  <p className="text-xs text-[#777B83] mt-1">
+                  <p className="text-xs text-[#57534E] mt-1">
                     {char.roleType === 'ramudu' && 'Wins 1,000 if finds Seetha, else 0.'}
                     {char.roleType === 'seetha' && 'Wins 1,000 if stays hidden, else 0.'}
                     {char.roleType === 'fixed' && 'Guaranteed fixed round points.'}
@@ -136,9 +136,9 @@ export const RamuduSeethaGame: React.FC<RamuduSeethaGameProps> = ({
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#E7E7E3] flex items-baseline justify-between">
-                  <span className="text-xs text-[#777B83]">Base Score</span>
-                  <span className="text-lg font-bold font-mono text-[#202124] tabular-nums">
+                <div className="mt-6 pt-4 border-t border-[#E6DFD3] flex items-baseline justify-between">
+                  <span className="text-xs text-[#8C857B]">Base Score</span>
+                  <span className="text-lg font-bold font-mono text-[#B45309] tabular-nums">
                     {char.baseScore.toLocaleString()}
                   </span>
                 </div>

@@ -87,15 +87,15 @@ export const ShowGame: React.FC<ShowGameProps> = ({
     <div className="space-y-6 max-w-5xl mx-auto">
       
       {/* Top HUD: Round Info & Passing Direction */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E7E3]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E6DFD3]">
         <div className="flex items-center gap-3">
-          <div className="px-3 py-1 rounded-lg bg-[#202124] text-white font-mono text-xs font-semibold tabular-nums">
+          <div className="px-3 py-1 rounded-lg bg-[#1C1917] text-white font-mono text-xs font-semibold tabular-nums">
             Round {roundNumber}
           </div>
-          <div className="text-xs text-[#777B83] flex items-center gap-1.5 font-medium">
-            <span>Category: <strong className="text-[#202124]">{category}</strong></span>
-            <span aria-hidden="true">·</span>
-            <span className="flex items-center gap-1 text-[#4169E1]">
+          <div className="text-xs text-[#57534E] flex items-center gap-1.5 font-medium">
+            <span>Category: <strong className="text-[#15803D]">{category}</strong></span>
+            <span aria-hidden="true" className="text-[#8C857B]">·</span>
+            <span className="flex items-center gap-1 text-[#3B62D6]">
               <RotateCw className="w-3 h-3" />
               Clockwise Passing
             </span>
@@ -105,7 +105,7 @@ export const ShowGame: React.FC<ShowGameProps> = ({
         {currentPlayer.isHost && (
           <button
             onClick={() => onSendAction('returnToLobby')}
-            className="self-start sm:self-auto text-xs font-medium text-[#777B83] hover:text-[#202124] px-3 py-1.5 rounded-lg border border-[#E7E7E3] hover:bg-[#F5F5F1] transition-colors cursor-pointer"
+            className="self-start sm:self-auto text-xs font-medium text-[#57534E] hover:text-[#1C1917] px-3 py-1.5 rounded-lg border border-[#E6DFD3] hover:bg-[#F3EFE6] transition-colors cursor-pointer"
           >
             Return to Lobby
           </button>
@@ -113,17 +113,17 @@ export const ShowGame: React.FC<ShowGameProps> = ({
       </div>
 
       {/* Hero Passing Action Instruction Banner */}
-      <div className="bg-white rounded-2xl border border-[#E7E7E3] p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="bg-white rounded-2xl border border-[#E6DFD3] p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <span className="text-xs text-[#777B83] font-medium block">
+          <span className="text-xs text-[#8C857B] font-medium block">
             Passing Phase
           </span>
-          <h2 className="text-lg sm:text-xl font-bold text-[#202124]">
+          <h2 className="text-lg sm:text-xl font-bold text-[#1C1917]">
             {isAlreadySubmitted
               ? 'Card submitted! Waiting for other players...'
               : `Select 1 card to pass clockwise to ${nextPlayerName}`}
           </h2>
-          <p className="text-xs text-[#777B83] mt-0.5">
+          <p className="text-xs text-[#57534E] mt-0.5">
             You keep 3 cards and receive 1 new card once all players have submitted.
           </p>
         </div>

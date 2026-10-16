@@ -96,26 +96,26 @@ export const HousyGame: React.FC<HousyGameProps> = ({
     <div className="space-y-6 max-w-5xl mx-auto">
       
       {/* Top Bar: Room info & Return */}
-      <div className="flex items-center justify-between pb-3 border-b border-[#E7E7E3]">
-        <div className="flex items-center gap-2 text-xs text-[#777B83]">
-          <span className="font-semibold text-[#202124]">Housy / Tambola</span>
+      <div className="flex items-center justify-between pb-3 border-b border-[#E6DFD3]">
+        <div className="flex items-center gap-2 text-xs text-[#8C857B]">
+          <span className="font-semibold text-[#1C1917]">Housy / Tambola</span>
           <span aria-hidden="true">·</span>
-          <span className="font-mono tabular-nums">{calledNumbers.length} / 90 Numbers Called</span>
+          <span className="font-mono tabular-nums text-[#3B62D6] font-semibold">{calledNumbers.length} / 90 Numbers Called</span>
         </div>
 
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShowFullBoard(!showFullBoard)}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#202124] bg-white border border-[#E7E7E3] hover:bg-[#F5F5F1] rounded-lg transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#1C1917] bg-white border border-[#E6DFD3] hover:bg-[#F3EFE6] rounded-lg transition-colors cursor-pointer"
           >
-            <Grid className="w-3.5 h-3.5 text-[#777B83]" />
+            <Grid className="w-3.5 h-3.5 text-[#8C857B]" />
             <span>{showFullBoard ? 'Hide 1-90 Board' : 'View 1-90 Board'}</span>
           </button>
           
           {currentPlayer.isHost && (
             <button
               onClick={() => onSendAction('returnToLobby')}
-              className="text-xs font-medium text-[#777B83] hover:text-[#202124] px-3 py-1.5 rounded-lg border border-[#E7E7E3] hover:bg-[#F5F5F1] transition-colors cursor-pointer"
+              className="text-xs font-medium text-[#57534E] hover:text-[#1C1917] px-3 py-1.5 rounded-lg border border-[#E6DFD3] hover:bg-[#F3EFE6] transition-colors cursor-pointer"
             >
               Return to Lobby
             </button>
@@ -123,28 +123,28 @@ export const HousyGame: React.FC<HousyGameProps> = ({
         </div>
       </div>
 
-      {/* Hero Caller Section */}
-      <div className="bg-white rounded-2xl border border-[#E7E7E3] p-6 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* Hero Caller Section in Soft Cream Container */}
+      <div className="bg-white rounded-2xl border border-[#E6DFD3] p-6 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Prominent Number Coin Display */}
         <div className="flex items-center gap-5">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#FAFAF8] border-3 border-[#4169E1] shadow-md flex flex-col items-center justify-center shrink-0">
-            <span className="text-[10px] tracking-widest text-[#777B83] font-semibold uppercase">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#FAF7F0] border-3 border-[#3B62D6] shadow-md flex flex-col items-center justify-center shrink-0">
+            <span className="text-[10px] tracking-widest text-[#8C857B] font-semibold uppercase">
               CURRENT
             </span>
-            <span className="text-4xl sm:text-5xl font-black font-mono text-[#4169E1] tabular-nums leading-none mt-0.5">
+            <span className="text-4xl sm:text-5xl font-black font-mono text-[#3B62D6] tabular-nums leading-none mt-0.5">
               {currentNumber !== null && currentNumber !== undefined ? currentNumber : '--'}
             </span>
           </div>
 
           <div>
-            <span className="text-xs text-[#777B83] font-medium block">
+            <span className="text-xs text-[#8C857B] font-medium block">
               Live Tambola Board
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#202124]">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1C1917]">
               {currentNumber ? `Number ${currentNumber} Called!` : 'Awaiting First Number'}
             </h2>
-            <p className="text-xs text-[#777B83] mt-1 max-w-sm">
+            <p className="text-xs text-[#57534E] mt-1 max-w-sm">
               Numbers are drawn authoritatively on the server and verified across all connected devices.
             </p>
           </div>
@@ -156,7 +156,7 @@ export const HousyGame: React.FC<HousyGameProps> = ({
             <button
               onClick={handleCallNext}
               disabled={callingNumber || calledNumbers.length >= 90}
-              className="w-full sm:w-auto px-6 py-3.5 bg-[#4169E1] hover:bg-[#3154C4] text-white text-sm font-semibold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50 touch-target focus-visible:ring-2 focus-visible:ring-[#4169E1]"
+              className="w-full sm:w-auto px-6 py-3.5 bg-[#3B62D6] hover:bg-[#2B4EBA] text-white text-sm font-semibold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50 touch-target focus-visible:ring-2 focus-visible:ring-[#3B62D6]"
             >
               <span>Call Next Number</span>
               <ArrowRight className="w-4 h-4" />

@@ -108,26 +108,26 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
     <div className="max-w-5xl mx-auto space-y-6">
       
       {/* Lobby Header Card with Room Code & Share Invite */}
-      <div className="bg-white rounded-2xl border border-[#E7E7E3] p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="bg-white rounded-2xl border border-[#E6DFD3] p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#737780] mb-1 font-medium">
-            <span>Room Lobby</span>
-            <span aria-hidden="true">·</span>
-            <span className="font-mono tabular-nums">{players.length} / {room.maxPlayers} Guests</span>
+          <div className="flex items-center gap-2 text-xs text-[#8C857B] mb-1 font-medium">
+            <span className="text-[#3B62D6] font-semibold">Room Lobby</span>
+            <span aria-hidden="true" className="text-[#8C857B]">·</span>
+            <span className="font-mono tabular-nums text-[#57534E]">{players.length} / {room.maxPlayers} Guests</span>
           </div>
-          <h1 className="text-2xl font-bold text-[#202124] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#1C1917] tracking-tight">
             Shared Game Room
           </h1>
-          <p className="text-xs text-[#737780] mt-0.5">
-            Share this code with your friends.
+          <p className="text-xs text-[#57534E] mt-0.5">
+            Share this code with your friends to play together in real time.
           </p>
         </div>
 
         {/* Room Code Display & Share Actions */}
         <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
-          <div className="flex items-center gap-3 px-4 py-2.5 bg-[#FAFAF8] border border-[#E7E7E3] rounded-xl font-mono">
-            <span className="text-xs text-[#737780]">CODE:</span>
-            <span className="text-xl font-bold text-[#202124] tracking-widest">
+          <div className="flex items-center gap-3 px-4 py-2.5 bg-[#FAF7F0] border border-[#E6DFD3] rounded-xl font-mono shadow-2xs">
+            <span className="text-xs text-[#8C857B]">CODE:</span>
+            <span className="text-xl font-bold text-[#1C1917] tracking-widest">
               {room.code}
             </span>
           </div>
@@ -135,16 +135,16 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
           <button
             onClick={handleCopyCode}
             aria-label="Copy room code to clipboard"
-            className="px-3.5 py-2.5 bg-[#F5F5F1] hover:bg-[#E7E7E3] text-[#202124] rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer touch-target focus-visible:ring-2 focus-visible:ring-[#4169E1]"
+            className="px-3.5 py-2.5 bg-[#F3EFE6] hover:bg-[#EDE8DC] text-[#1C1917] border border-[#E6DFD3] rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer touch-target focus-visible:ring-2 focus-visible:ring-[#3B62D6]"
           >
             {copiedCode ? (
               <>
-                <Check className="w-3.5 h-3.5 text-[#238636]" />
-                <span className="text-[#238636]">Copied</span>
+                <Check className="w-3.5 h-3.5 text-[#15803D]" />
+                <span className="text-[#15803D]">Copied</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5 text-[#737780]" />
+                <Copy className="w-3.5 h-3.5 text-[#8C857B]" />
                 <span>Copy Code</span>
               </>
             )}
@@ -153,12 +153,12 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
           <button
             onClick={handleShareInvite}
             aria-label="Share room invite link"
-            className="px-3.5 py-2.5 bg-[#EEF2FD] hover:bg-[#4169E1]/15 text-[#4169E1] rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer touch-target focus-visible:ring-2 focus-visible:ring-[#4169E1]"
+            className="px-3.5 py-2.5 bg-[#EBF0FC] hover:bg-[#3B62D6]/15 text-[#3B62D6] border border-[#3B62D6]/20 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer touch-target focus-visible:ring-2 focus-visible:ring-[#3B62D6]"
           >
             {copiedInvite ? (
               <>
-                <Check className="w-3.5 h-3.5 text-[#238636]" />
-                <span className="text-[#238636]">Link Copied!</span>
+                <Check className="w-3.5 h-3.5 text-[#15803D]" />
+                <span className="text-[#15803D]">Link Copied!</span>
               </>
             ) : (
               <>
@@ -172,7 +172,7 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
             <button
               onClick={onLeaveRoom}
               aria-label="Leave room"
-              className="px-3 py-2.5 text-xs font-medium text-[#D93025] hover:bg-red-50 rounded-xl flex items-center gap-1 transition-colors cursor-pointer touch-target"
+              className="px-3 py-2.5 text-xs font-medium text-[#DC2626] hover:bg-red-50 border border-red-200 rounded-xl flex items-center gap-1 transition-colors cursor-pointer touch-target"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>Leave</span>
@@ -193,13 +193,13 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
         {/* Left Column: Game Selection & Details (2 Cols) */}
         <div className="lg:col-span-2 space-y-6">
           
-          <div className="bg-white rounded-2xl border border-[#E7E7E3] p-6 shadow-xs">
+          <div className="bg-white rounded-2xl border border-[#E6DFD3] p-6 shadow-xs">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base font-bold text-[#202124]">
+              <h2 className="text-base font-bold text-[#1C1917]">
                 Choose Game
               </h2>
               {!isHost && (
-                <span className="text-xs text-[#777B83]">
+                <span className="text-xs text-[#8C857B]">
                   Host selects the game
                 </span>
               )}
@@ -212,16 +212,19 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
                   id: 'housy' as GameType,
                   title: 'Housy (Tambola)',
                   desc: 'Live number calling with 5 winning patterns',
+                  accent: 'text-[#3B62D6]',
                 },
                 {
                   id: 'show' as GameType,
                   title: 'Show',
                   desc: 'Keep 3 cards. Pass 1. Repeat.',
+                  accent: 'text-[#15803D]',
                 },
                 {
                   id: 'ramudu-seetha' as GameType,
                   title: 'Ramudu–Seetha',
                   desc: 'Character scoring engine & rules',
+                  accent: 'text-[#B45309]',
                 },
               ].map((game) => {
                 const isSelected = selectedGame === game.id;
@@ -232,22 +235,22 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
                     onClick={() => handleSelectGame(game.id)}
                     className={`p-4 rounded-xl border text-left flex flex-col justify-between transition-all touch-target ${
                       isSelected
-                        ? 'border-2 border-[#4169E1] bg-[#EEF2FD]/40 shadow-xs'
-                        : 'border-[#E7E7E3] bg-[#FAFAF8] hover:bg-white'
+                        ? 'border-2 border-[#3B62D6] bg-[#EBF0FC]/50 shadow-xs'
+                        : 'border-[#E6DFD3] bg-[#FAF7F0] hover:bg-white'
                     } ${!isHost ? 'cursor-default' : 'cursor-pointer'}`}
                   >
                     <div>
-                      <span className={`text-xs font-bold block ${isSelected ? 'text-[#4169E1]' : 'text-[#202124]'}`}>
+                      <span className={`text-xs font-bold block ${isSelected ? 'text-[#3B62D6]' : 'text-[#1C1917]'}`}>
                         {game.title}
                       </span>
-                      <p className="text-[11px] text-[#777B83] mt-1 leading-snug">
+                      <p className="text-[11px] text-[#57534E] mt-1 leading-snug">
                         {game.desc}
                       </p>
                     </div>
 
-                    <div className="mt-3 pt-2 border-t border-[#E7E7E3]/60 flex items-center justify-between text-[10px] text-[#777B83]">
-                      <span>{isSelected ? '● Selected' : 'Available'}</span>
-                      {isHost && isSelected && <span className="text-[#4169E1] font-semibold">Active</span>}
+                    <div className="mt-3 pt-2 border-t border-[#E6DFD3]/60 flex items-center justify-between text-[10px] text-[#8C857B]">
+                      <span className={isSelected ? 'text-[#3B62D6] font-semibold' : ''}>{isSelected ? '● Selected' : 'Available'}</span>
+                      {isHost && isSelected && <span className="text-[#3B62D6] font-semibold">Active</span>}
                     </div>
                   </button>
                 );
@@ -255,8 +258,8 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
             </div>
 
             {/* Game Preview & Rules summary box */}
-            <div className="mt-6 p-4 rounded-xl bg-[#FAFAF8] border border-[#E7E7E3] text-xs text-[#777B83] space-y-1.5">
-              <div className="font-semibold text-[#202124]">
+            <div className="mt-6 p-4 rounded-xl bg-[#FAF7F0] border border-[#E6DFD3] text-xs text-[#57534E] space-y-1.5">
+              <div className="font-semibold text-[#1C1917]">
                 {selectedGame === 'housy' && 'About Housy / Tambola'}
                 {selectedGame === 'show' && 'About Show (Passing Card Game)'}
                 {selectedGame === 'ramudu-seetha' && 'About Ramudu–Seetha'}
@@ -273,12 +276,12 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
           </div>
 
           {/* Action Row: Ready Status or Start Game */}
-          <div className="bg-white rounded-2xl border border-[#E7E7E3] p-5 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E6DFD3] p-5 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-semibold text-[#202124] block">
+              <span className="text-xs font-semibold text-[#1C1917] block">
                 {isHost ? 'You are the Room Host' : 'Player Status'}
               </span>
-              <p className="text-xs text-[#777B83]">
+              <p className="text-xs text-[#57534E]">
                 {isHost
                   ? 'When players are ready, start the game to distribute tickets/cards.'
                   : 'Toggle ready so the host knows you are prepared.'}
@@ -289,10 +292,10 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
               {!isHost && (
                 <button
                   onClick={handleToggleReady}
-                  className={`w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-semibold transition-colors cursor-pointer touch-target ${
+                  className={`w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-semibold transition-all cursor-pointer touch-target ${
                     currentPlayer.isReady
-                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                      : 'bg-[#F5F5F1] text-[#202124] hover:bg-[#E7E7E3]'
+                      ? 'bg-[#EBF7EE] text-[#15803D] border border-[#15803D]/30'
+                      : 'bg-[#F3EFE6] text-[#1C1917] hover:bg-[#EDE8DC] border border-[#E6DFD3]'
                   }`}
                 >
                   {currentPlayer.isReady ? '✓ Ready' : 'Mark as Ready'}
@@ -303,7 +306,7 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
                 <button
                   onClick={handleStartGame}
                   disabled={starting}
-                  className="w-full sm:w-auto px-6 py-3 bg-[#4169E1] hover:bg-[#3154C4] text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50 touch-target focus-visible:ring-2 focus-visible:ring-[#4169E1]"
+                  className="w-full sm:w-auto px-6 py-3 bg-[#3B62D6] hover:bg-[#2B4EBA] text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs hover:shadow-md disabled:opacity-50 touch-target focus-visible:ring-2 focus-visible:ring-[#3B62D6]"
                 >
                   <Play className="w-4 h-4 fill-current" />
                   <span>{starting ? 'Starting Game...' : 'Start Game'}</span>
@@ -315,21 +318,21 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
         </div>
 
         {/* Right Column: Participant Roster (1 Col) */}
-        <div className="bg-white rounded-2xl border border-[#E7E7E3] p-6 shadow-xs flex flex-col justify-between">
+        <div className="bg-white rounded-2xl border border-[#E6DFD3] p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base font-bold text-[#202124]">
+              <h2 className="text-base font-bold text-[#1C1917]">
                 Guests in Room
               </h2>
-              <span className="text-xs font-mono text-[#737780] tabular-nums">
+              <span className="text-xs font-mono text-[#8C857B] tabular-nums">
                 {players.length} Active
               </span>
             </div>
 
             {/* Empty State when only host is present */}
             {players.length === 1 && (
-              <div className="p-4 mb-3 rounded-xl bg-[#FAFAF8] border border-[#E7E7E3] text-center text-xs text-[#737780]">
-                <p className="font-medium text-[#202124]">Your room is ready.</p>
+              <div className="p-4 mb-3 rounded-xl bg-[#FAF7F0] border border-[#E6DFD3] text-center text-xs text-[#57534E]">
+                <p className="font-semibold text-[#1C1917]">Your room is ready.</p>
                 <p className="mt-0.5">Invite friends to join using the code above.</p>
               </div>
             )}
@@ -343,7 +346,7 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
                 return (
                   <div
                     key={p.id}
-                    className="p-3 rounded-xl border border-[#E7E7E3] bg-[#FAFAF8] flex items-center justify-between text-xs"
+                    className="p-3 rounded-xl border border-[#E6DFD3] bg-[#FAF7F0] flex items-center justify-between text-xs"
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       {/* CSS-only Initial Avatar */}
@@ -356,21 +359,21 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
 
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
-                          <span className="font-semibold text-[#202124] truncate">
+                          <span className="font-semibold text-[#1C1917] truncate">
                             {p.name} {isMe && '(You)'}
                           </span>
                           {p.isHost && (
                             <span title="Host">
-                              <Crown className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                              <Crown className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                             </span>
                           )}
                         </div>
 
-                        <div className="flex items-center gap-1.5 text-[11px] text-[#737780] font-mono">
+                        <div className="flex items-center gap-1.5 text-[11px] text-[#8C857B] font-mono">
                           <span>{p.shortUid || 'G-00000000'}</span>
                           <span aria-hidden="true">·</span>
-                          <span className={`inline-flex items-center gap-1 ${p.isConnected ? 'text-[#238636]' : 'text-amber-600'}`}>
-                            <span className={`w-1.5 h-1.5 rounded-full ${p.isConnected ? 'bg-[#238636]' : 'bg-amber-500'}`} />
+                          <span className={`inline-flex items-center gap-1 ${p.isConnected ? 'text-[#15803D]' : 'text-amber-600'}`}>
+                            <span className={`w-1.5 h-1.5 rounded-full ${p.isConnected ? 'bg-[#15803D]' : 'bg-amber-500'}`} />
                             {p.isConnected ? 'Online' : 'Reconnecting'}
                           </span>
                         </div>

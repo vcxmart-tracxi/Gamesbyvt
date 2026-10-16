@@ -120,7 +120,7 @@ export default function App() {
   const isAboutRoute = currentPath === '/about';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#202124] relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#FAF7F0] text-[#1C1917] relative overflow-x-hidden selection:bg-[#3B62D6]/15 selection:text-[#1C1917]">
       
       {/* Ambient Moving Dotted Shapes Background */}
       <DottedBackground />

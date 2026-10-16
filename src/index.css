@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAF8;
+  --background: #FAF7F0; /* Soft warm cream */
   --surface: #FFFFFF;
-  --text-primary: #202124;
-  --text-secondary: #737780;
-  --border: #E7E7E3;
-  --border-subtle: #F0F0EC;
-  --accent: #4169E1;
-  --accent-hover: #3154C4;
-  --accent-light: #EEF2FD;
-  --success: #238636;
-  --success-light: #EDF7EE;
-  --danger: #D93025;
-  --danger-light: #FCE8E6;
-  --surface-muted: #F5F5F1;
-  --surface-hover: #F2F2EC;
+  --text-primary: #1C1917; /* Deep espresso charcoal */
+  --text-secondary: #57534E; /* Warm stone taupe */
+  --text-tertiary: #8C857B; /* Soft muted parchment */
+  --text-accent: #3B62D6; /* Crisp royal sapphire */
+  --text-amber: #B45309; /* Warm earthy amber */
+  --text-emerald: #15803D; /* Forest sage green */
+  --border: #E6DFD3; /* Warm soft border */
+  --border-subtle: #F0EAE0;
+  --accent: #3B62D6;
+  --accent-hover: #2B4EBA;
+  --accent-light: #EBF0FC;
+  --success: #15803D;
+  --success-light: #EBF7EE;
+  --danger: #DC2626;
+  --danger-light: #FEECEB;
+  --surface-muted: #F3EFE6; /* Cream surface tint */
+  --surface-hover: #EDE8DC;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;

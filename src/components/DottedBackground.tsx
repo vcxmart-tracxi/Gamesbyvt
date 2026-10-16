@@ -92,7 +92,7 @@ export const DottedBackground: React.FC = () => {
       </div>
 
       {/* 4. Floating Geometric Shape: Dotted Hexagon & Cluster (Bottom-Left) */}
-      <div className="absolute bottom-[10%] left-[8%] w-60 h-60 sm:w-72 sm:h-72 opacity-[0.24] animate-[shapeFloatHex_26s_ease-in-out_infinite]">
+      <div className="absolute bottom-[10%] left-[8%] w-60 h-60 sm:w-72 sm:h-72 opacity-[0.26] animate-[shapeFloatHex_26s_ease-in-out_infinite]">
         <svg
           viewBox="0 0 200 200"
           className="w-full h-full animate-[spin_80s_linear_infinite_reverse]"
@@ -100,7 +100,7 @@ export const DottedBackground: React.FC = () => {
           <polygon
             points="100,15 175,55 175,145 100,185 25,145 25,55"
             fill="none"
-            stroke="#737780"
+            stroke="#15803D"
             strokeWidth="2.5"
             strokeDasharray="1 11"
             strokeLinecap="round"
@@ -108,28 +108,29 @@ export const DottedBackground: React.FC = () => {
           <polygon
             points="100,45 150,75 150,125 100,155 50,125 50,75"
             fill="none"
-            stroke="#4169E1"
+            stroke="#B45309"
             strokeWidth="2"
             strokeDasharray="1 9"
             strokeLinecap="round"
           />
-          <circle cx="100" cy="100" r="4" fill="#737780" />
+          <circle cx="100" cy="100" r="4" fill="#B45309" />
         </svg>
       </div>
 
       {/* 5. Floating Geometric Shape: 4x4 Dotted Matrix Grid (Bottom-Right) */}
-      <div className="absolute bottom-[14%] right-[10%] w-52 h-52 sm:w-64 sm:h-64 opacity-[0.26] animate-[shapeFloatGrid_22s_ease-in-out_infinite]">
+      <div className="absolute bottom-[14%] right-[10%] w-52 h-52 sm:w-64 sm:h-64 opacity-[0.28] animate-[shapeFloatGrid_22s_ease-in-out_infinite]">
         <svg viewBox="0 0 160 160" className="w-full h-full">
           {[20, 60, 100, 140].map((x, i) =>
             [20, 60, 100, 140].map((y, j) => {
-              const isAccent = (i + j) % 2 === 0;
+              const isAccent = (i + j) % 3 === 0;
+              const isWarm = (i + j) % 3 === 1;
               return (
                 <circle
                   key={`${i}-${j}`}
                   cx={x}
                   cy={y}
-                  r={isAccent ? 3.5 : 2.5}
-                  fill={isAccent ? '#4169E1' : '#737780'}
+                  r={isAccent || isWarm ? 3.5 : 2.5}
+                  fill={isAccent ? '#3B62D6' : isWarm ? '#B45309' : '#78716C'}
                   className="animate-[pulse_4s_ease-in-out_infinite]"
                   style={{ animationDelay: `${(i + j) * 0.25}s` }}
                 />
@@ -140,12 +141,12 @@ export const DottedBackground: React.FC = () => {
       </div>
 
       {/* 6. Subtle S-Wave of moving dots across the center */}
-      <div className="absolute top-[45%] left-1/2 -translate-x-1/2 w-[90vw] max-w-5xl h-24 opacity-[0.18] animate-[shapeFloatWave_18s_ease-in-out_infinite]">
+      <div className="absolute top-[45%] left-1/2 -translate-x-1/2 w-[90vw] max-w-5xl h-24 opacity-[0.20] animate-[shapeFloatWave_18s_ease-in-out_infinite]">
         <svg viewBox="0 0 800 100" preserveAspectRatio="none" className="w-full h-full">
           <path
             d="M0,50 Q200,10 400,50 T800,50"
             fill="none"
-            stroke="#4169E1"
+            stroke="#3B62D6"
             strokeWidth="2.5"
             strokeDasharray="1 16"
             strokeLinecap="round"
@@ -153,7 +154,7 @@ export const DottedBackground: React.FC = () => {
           <path
             d="M0,65 Q200,25 400,65 T800,65"
             fill="none"
-            stroke="#737780"
+            stroke="#B45309"
             strokeWidth="1.8"
             strokeDasharray="1 20"
             strokeLinecap="round"
@@ -161,8 +162,8 @@ export const DottedBackground: React.FC = () => {
         </svg>
       </div>
 
-      {/* 7. Soft Vignette: Keeps center stage comfortable and ensures flawless contrast */}
-      <div className="absolute inset-0 bg-radial-[circle_at_50%_35%] from-transparent via-[#FAFAF8]/35 to-[#FAFAF8]/85 pointer-events-none" />
+      {/* 7. Soft Cream Vignette: Blends seamlessly with #FAF7F0 */}
+      <div className="absolute inset-0 bg-radial-[circle_at_50%_35%] from-transparent via-[#FAF7F0]/30 to-[#FAF7F0]/85 pointer-events-none" />
 
       {/* Scoped CSS Keyframe animations for hardware-accelerated movement */}
       <style>{`

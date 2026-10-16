@@ -48,25 +48,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           GamesByVT rejects artificial visual clutter, neon gradients, and slow pseudo-dashboards in favor of a calm, warm, responsive aesthetic:
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-          <div className="p-3.5 rounded-xl border border-[#E7E7E3] bg-[#FAFAF8]">
-            <span className="block text-[10px] text-[#777B83] font-mono">CANVAS</span>
-            <span className="text-xs font-bold text-[#202124] mt-0.5 block">#FAFAF8</span>
-            <span className="text-[11px] text-[#777B83]">Warm White</span>
+          <div className="p-3.5 rounded-xl border border-[#E6DFD3] bg-[#FAF7F0]">
+            <span className="block text-[10px] text-[#8C857B] font-mono">CANVAS</span>
+            <span className="text-xs font-bold text-[#1C1917] mt-0.5 block">#FAF7F0</span>
+            <span className="text-[11px] text-[#57534E]">Soft Cream</span>
           </div>
-          <div className="p-3.5 rounded-xl border border-[#E7E7E3] bg-[#FAFAF8]">
-            <span className="block text-[10px] text-[#777B83] font-mono">ACCENT</span>
-            <span className="text-xs font-bold text-[#4169E1] mt-0.5 block">#4169E1</span>
-            <span className="text-[11px] text-[#777B83]">Muted Blue</span>
+          <div className="p-3.5 rounded-xl border border-[#E6DFD3] bg-[#FAF7F0]">
+            <span className="block text-[10px] text-[#8C857B] font-mono">ACCENT</span>
+            <span className="text-xs font-bold text-[#3B62D6] mt-0.5 block">#3B62D6</span>
+            <span className="text-[11px] text-[#57534E]">Royal Sapphire</span>
           </div>
-          <div className="p-3.5 rounded-xl border border-[#E7E7E3] bg-[#FAFAF8]">
-            <span className="block text-[10px] text-[#777B83] font-mono">PRIMARY TEXT</span>
-            <span className="text-xs font-bold text-[#202124] mt-0.5 block">#202124</span>
-            <span className="text-[11px] text-[#777B83]">Dark Charcoal</span>
+          <div className="p-3.5 rounded-xl border border-[#E6DFD3] bg-[#FAF7F0]">
+            <span className="block text-[10px] text-[#8C857B] font-mono">PRIMARY TEXT</span>
+            <span className="text-xs font-bold text-[#1C1917] mt-0.5 block">#1C1917</span>
+            <span className="text-[11px] text-[#57534E]">Espresso Charcoal</span>
           </div>
-          <div className="p-3.5 rounded-xl border border-[#E7E7E3] bg-[#FAFAF8]">
-            <span className="block text-[10px] text-[#777B83] font-mono">BORDERS</span>
-            <span className="text-xs font-bold text-[#777B83] mt-0.5 block">#E7E7E3</span>
-            <span className="text-[11px] text-[#777B83]">Soft Grey</span>
+          <div className="p-3.5 rounded-xl border border-[#E6DFD3] bg-[#FAF7F0]">
+            <span className="block text-[10px] text-[#8C857B] font-mono">BORDERS</span>
+            <span className="text-xs font-bold text-[#8C857B] mt-0.5 block">#E6DFD3</span>
+            <span className="text-[11px] text-[#57534E]">Warm Cream Border</span>
           </div>
         </div>
       </section>
