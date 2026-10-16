@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "rooms": {
+      "$roomCode": {
+        // Any authenticated user can read public room state
+        ".read": "auth != null",
+        
+        // Only host can modify room root properties (status, selectedGame)
+        ".write": "auth != null && (data.child('hostId').val() === auth.uid || !data.exists())",
+        
+        "players": {
+          "$playerId": {
+            // A player can only write to their own profile / ready status
+            ".write": "auth != null && auth.uid === $playerId"
+          }
+        },
+        
+        "publicGame": {
+          // Only host or authorized server can update public game state
+          ".write": "auth != null && root.child('rooms').child($roomCode).child('hostId').val() === auth.uid"
+        }
+      }
+    },
+    
+    // Private player state: Strictly isolated!
+    // A player can NEVER read another player's private hand or ticket!
+    "private": {
+      "$roomCode": {
+        "$playerId": {
+          ".read": "auth != null && auth.uid === $playerId",
+          ".write": "auth != null && auth.uid === $playerId"
+        }
+      }
+    }
+  }
+}

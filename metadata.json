@@ -1,0 +1,8 @@
+{
+  "name": "GamesByVT",
+  "description": "Three Games. One Room. Play Together. Designed and Developed by Bodepudi Varun Teja. Responsive real-time multiplayer platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

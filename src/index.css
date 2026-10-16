@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF8;
+  --surface: #FFFFFF;
+  --text-primary: #202124;
+  --text-secondary: #737780;
+  --border: #E7E7E3;
+  --border-subtle: #F0F0EC;
+  --accent: #4169E1;
+  --accent-hover: #3154C4;
+  --accent-light: #EEF2FD;
+  --success: #238636;
+  --success-light: #EDF7EE;
+  --danger: #D93025;
+  --danger-light: #FCE8E6;
+  --surface-muted: #F5F5F1;
+  --surface-hover: #F2F2EC;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Win Animations (300-900ms) */
+@keyframes winCardScale {
+  0% { transform: scale(0.97); opacity: 0.9; }
+  60% { transform: scale(1.02); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes winGlowGreen {
+  0% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(35, 134, 54, 0.15); }
+  100% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0); }
+}
+
+@keyframes winGlowBlue {
+  0% { box-shadow: 0 0 0 0 rgba(65, 105, 225, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(65, 105, 225, 0.15); }
+  100% { box-shadow: 0 0 0 0 rgba(65, 105, 225, 0); }
+}
+
+@keyframes lossCardDrop {
+  0% { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes checkmarkPop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes confettiParticle {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120px) rotate(360deg); opacity: 0; }
+}
+
+.animate-win-card {
+  animation: winCardScale 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-win-glow-green {
+  animation: winGlowGreen 750ms ease-out forwards;
+}
+
+.animate-win-glow-blue {
+  animation: winGlowBlue 750ms ease-out forwards;
+}
+
+.animate-loss-card {
+  animation: lossCardDrop 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-checkmark {
+  animation: checkmarkPop 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confettiParticle 850ms ease-out forwards;
+}
+
+/* Tabular numerals for game grids, countdowns, and stats */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Minimum touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Safe areas */
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-pt {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Subtle float and pulse animations for geometric badges and dotted elements */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.5deg); }
+}
+
+@keyframes pulseDottedRing {
+  0%, 100% { transform: scale(0.98); opacity: 0.85; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 7s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseDottedRing 5s ease-in-out infinite;
+}
